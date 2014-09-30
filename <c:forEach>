@@ -1,0 +1,4 @@
+<c:forEach var="type" items="${types}">
+   Key is ${type.key}
+   Value is ${type.value}
+</c:forEach>
