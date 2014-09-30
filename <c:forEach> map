@@ -3,6 +3,19 @@
    Value is ${type.value}
 </c:forEach>
 
+<c:forEach var="map" items="${treeViewMap}" varStatus="status" >
+	keyStr += '${status.index}' + "--->" + '${map.key}' + ":" + '${map.value}' + "\n";
+</c:forEach>
+
+${status.index} 輸出行號，從0開始。
+${status.count} 輸出行號，從1開始。
+${status.current} 當前這次迭代的（集合中的）項
+${status.first} 判斷當前項是否為集合中的第一項，返回值為true或false
+${status.last} 判斷當前項是否為集合中的最後一項，返回值為true或false
+begin、end、step分別表示：起始序號，結束序號，跳躍步伐。
+
+如：<c:forEach begin='1' end='5' step='2' items='${list}' var='item'>
+
 Attribute	Description	Required	Default
 items	      Information to loop over	No	None
 begin	      Element to start with (0 = first item, 1 = second item, ...)	No	0
